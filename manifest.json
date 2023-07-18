@@ -4,6 +4,7 @@
   "lang": "en-US",
   "start_url": "/subdirectory/index.html",
   "display": "fullscreen",
+  "orientation": "landscape",
   "background_color": "white",
   "theme_color": "white",
   "icons": [
