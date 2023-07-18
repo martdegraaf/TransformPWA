@@ -36,3 +36,6 @@ $headersToAddContent = (Get-Content -Path "template.html" -Raw) -replace '{{NAME
 # Replace <style> in the index.html in directory with the contents in the styleToAdd.css file append it to the current contents of the <style> tag
 
 (Get-Content -Path "$directory\index.html") -replace '(<style>)(.*?)(</style>)', "`$1`$2$styleToAddContent`$3$headersToAddContent" | Set-Content -Path "$directory\index.html" -Encoding UTF8
+
+$scripToAddContent = '<script src="main.js"></script>'
+(Get-Content -Path "$directory\index.html") -replace '(<body>)(.*?)(</body>)', "`$1`$2$scripToAddContent`$3" | Set-Content -Path "$directory\index.html" -Encoding UTF8
